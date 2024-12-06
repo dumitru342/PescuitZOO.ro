@@ -1,0 +1,27 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "magazin_online";
+
+// Creare conexiune
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificare conexiune
+if ($conn->connect_error) {
+    die("Conexiune eșuată: " . $conn->connect_error);
+}
+
+// Interogare pentru a obține produsele
+$sql = "SELECT * FROM produse";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "Nume: " . $row["nume"]. " - Preț: " . $row["pret"]. "<br>";
+    }
+} else {
+    echo "0 rezultate";
+}
+$conn->close();
+?>

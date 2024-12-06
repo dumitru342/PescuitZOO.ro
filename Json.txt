@@ -1,0 +1,13 @@
+
+    "metode_plata": [
+        "Stripe",
+        "PayPal",
+        "Platã ramburs"
+    ],
+    "livrare": {
+        "optiuni": [
+            "Livrare rapidă",
+            "Livrare normală"
+        ]
+    }
+}
